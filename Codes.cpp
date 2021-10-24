@@ -197,6 +197,6 @@ int main(){
 
 // Let the length of array become 1 after k iterations
 // n/ (2^k) = 1 ; find k 
-// k = log n ( base 2 )
+// k = log n ( base 2 )           Time Complexity = O(log n)  ......of binary search 
 
-
+// Sorting- ordering of elements in array in ascending order
