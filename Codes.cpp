@@ -129,5 +129,74 @@ a) Best Case [ sigma ( big omega) notation ]= time complexity is constant     - 
 b) Average Case [ theta ( big theta) notation ]= time complexity = (n+1)/2 = directly proportional to n       -theta(n)
 c) Worst Case [ O ( big oh ) notation ]= time complexity is directly proportional to n         - O(n)
 
-*/
+*/ 
+// Find a key ( number ) in array  - return the index 
+int FindFunc(int arr[], int n, int key){
+    for(int i=0; i<n; i++){
+        if(key == arr[i]){
+            return i;
+        }
+        else{
+            continue;
+        }
+    }
+    return -1;
+}
+
+int main(){
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int k=0; k<n; k++){
+        cin >> arr[k];
+    }
+    int key;
+    cin>> key;
+    cout<< FindFunc(arr,n,key)<< endl;
+    return 0;
+}
+
+// Binary Search - for this our elements in array must be in sorted order   ( ERROR HERE )
+
+int FindFunc(int arr[], int n, int key){
+    int s=0;
+    int e= n;
+    while(s<=e){
+        int mid= (s+e)/2;
+        if(arr[mid]<key){
+            s= mid+1;
+        }
+        else if(arr[mid]=key){
+            return mid;
+        }
+        else{
+            e= mid-1;
+        }
+    }
+    return -1;
+}
+
+int main(){
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    int key;
+    cin>> key;
+    cout<< FindFunc(arr,n,key)<< endl;
+    return 0;
+}
+
+// Time complexity of Binary Search
+// After first iteration, length of array = n
+// After second iteratio, length of aray = n/2
+// After third iteration, length of aray = n/4
+// After k iterations, length of array = n/ (2^k)
+
+// Let the length of array become 1 after k iterations
+// n/ (2^k) = 1 ; find k 
+// k = log n ( base 2 )
+
 
