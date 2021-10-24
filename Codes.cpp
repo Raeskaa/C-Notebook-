@@ -67,19 +67,20 @@ int main()
 // Printing all prime numbers btween a and b using function ( Imma gettin error ) 
 
 bool PrimeOrNot(int n){
+    int k;
     for(int i=2; i<n; i++){
         if(n%i==0){
-            cout<< 0;
+            k=0;
             break;
         }
         else{
             if(i==n-1){
-                cout<<1;
+                k=1;
             }
             continue;
         }
     }
-    return 0;
+    return k;
 }
 int main(){
     int a,b;
@@ -89,8 +90,44 @@ int main(){
         cout<< x;
     }
     else{
+        cout<< " ";
         continue;
     }
      }
 }
+
+// Print the fibonnaci sequence till n ( given ) 
+
+void FibFunc(int n){
+    int t1=0;
+    int t2=1;
+    int sum;
+    for(int i =0; i<=n; i++){
+        cout << t1<< endl;
+        sum = t1+t2;
+        t1=t2;
+        t2= sum;
+    }
+    return ;
+}
+int main(){
+    int n;
+    cin >> n;
+    FibFunc(n);
+    return 0;
+}
+
+// Practice Functions *** 
+/* 
+
+Time Complexity - Time taken by your code to return output ( Analysis ) 
+                  Time complexity of an algorithm quantifies the amount of time taken by a program to run as a function of length of the input
+Space Complexity - Space complexity of an algorithm quantifies the amount of time taken by a program to run as a function of length of the input. It s directly proportional to the largest memory of your program qcquires at any instance during running time
+** Space complexity doesnt depends on your input **
+For a search algorithm 
+a) Best Case [ sigma ( big omega) notation ]= time complexity is constant     - sigma(1)
+b) Average Case [ theta ( big theta) notation ]= time complexity = (n+1)/2 = directly proportional to n       -theta(n)
+c) Worst Case [ O ( big oh ) notation ]= time complexity is directly proportional to n         - O(n)
+
+*/
 
