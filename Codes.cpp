@@ -1,4 +1,4 @@
-// Code to find out if a number is 
+// Code to find out if a number is Armstrong number
 
 int main()
 {
@@ -200,3 +200,89 @@ int main(){
 // k = log n ( base 2 )           Time Complexity = O(log n)  ......of binary search 
 
 // Sorting- ordering of elements in array in ascending order
+
+int sorting(int arr[],int n){
+   for(int i=0; i<n-1; i++){
+       for(int j=1+i; j<n; j++){
+           if(arr[j]<arr[i]){
+               int temp = arr[j];
+               arr[j]=arr[i];
+               arr[i]=temp;
+           }
+           else{
+               continue;
+           }
+       }
+       
+   }
+}
+
+int main()
+{
+    
+    int n;
+    cin >> n;
+    
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    sorting(arr, n);
+    for(int i=0; i<n; i++){
+        cout<< arr[i]<< " ";
+    }
+    return 0;
+}
+
+// Bubble sorting algorithm
+int main(){
+    int n;
+    cin >> n;
+    
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    
+    for(int i=0; i<n-1; i++){
+        int left= arr[i];
+        int right= arr[i+1];
+        if(left>right){
+            int num= left;
+            arr[i]= arr[i+1];
+            arr[i+1]= left;
+        }
+    }
+    for(int i=0; i<n; i++){
+        cout<< arr[i]<< " ";
+     }
+return 0;
+}
+
+// Insertion Sort Algorithm 
+
+int main(){
+    int n;
+    cin>>n;
+    
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+    
+    for(int i=1; i<n; i++){
+        for(int j=i-1; j>0; j--){
+        if(arr[j]<arr[j-1]){
+            int k= arr[j-1];
+            arr[j-1]=arr[j];
+            arr[j]= k;
+         }
+      }
+    }
+    for(int i=0; i<n; i++){
+        cout<< arr[i]<< " ";
+    }
+    return 0;
+}
+
+// 
